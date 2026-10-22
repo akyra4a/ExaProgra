@@ -22,7 +22,6 @@ namespace ExAProgra
             CargarProductos();
         }
 
-        // --- MÉTODOS DE SOPORTE ---
         private void CargarCategorias()
         {
             if (!_context.Categorias.Any())
@@ -80,7 +79,7 @@ namespace ExAProgra
 
             if (_productoIdSeleccionado == 0)
             {
-                // CREATE
+                
                 var nuevoProducto = new Producto
                 {
                     Nombre = txtNombre.Text,
@@ -91,7 +90,7 @@ namespace ExAProgra
             }
             else
             {
-                // UPDATE
+                
                 var productoExistente = _context.Productos.Find(_productoIdSeleccionado);
                 if (productoExistente != null)
                 {
@@ -107,7 +106,7 @@ namespace ExAProgra
             MessageBox.Show("Operación realizada con éxito.");
         }
 
-        // Seleccionar registro desde el DataGridView
+       
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -122,7 +121,7 @@ namespace ExAProgra
             }
         }
 
-        // El PDF no da código para btnEditar: aquí hace lo mismo que Guardar/Actualizar
+     
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (_productoIdSeleccionado == 0)
@@ -133,7 +132,7 @@ namespace ExAProgra
             btnGuardar_Click(sender, e);
         }
 
-        // DELETE
+        
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (_productoIdSeleccionado == 0)
